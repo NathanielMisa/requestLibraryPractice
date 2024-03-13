@@ -4,7 +4,10 @@ from tokenCode import get_token
 
 
 def jsonFunc(myFile):
-    print(json.dumps(myFile.json(), indent=2))
+    extract = myFile.json()
+    for i in extract["response"]:
+        print(f"{i['type']} with a Mac Address of {
+              i['macAddress']} | ID: {i['id']}")
 
 
 print("running")
